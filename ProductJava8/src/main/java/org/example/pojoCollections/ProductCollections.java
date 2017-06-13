@@ -82,7 +82,7 @@ public class ProductCollections {
 				.collect(Collectors.toList());
 
 		if (list.isEmpty()) {
-			log.info("Didnt find elemet.");
+			log.info("Dont find element. ");
 		}
 
 		return list;
