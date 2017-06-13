@@ -18,7 +18,9 @@ public class MainClasss {
 		
 		log.info(pc.prodWithMaxPrice()); 
 		log.info(pc.prodWithMinPrice());
+		
 		System.out.println("=========================");
+		
 		log.info(pc.findBy(productBrand("Беседа")));
 		log.info(pc.findBy(productName("Ceylon")));
 		log.info(pc.findBy(productPrice(1000)));
