@@ -16,7 +16,7 @@ public class MainClasss {
 		
 		ProductCollections pc = new ProductCollections();	
 		
-		log.info(pc.prodWithMaxPrice());
+		log.info(pc.prodWithMaxPrice()); 
 		log.info(pc.prodWithMinPrice());
 		System.out.println("=========================");
 		log.info(pc.findBy(productBrand("Беседа")));
