@@ -9,26 +9,18 @@ import static org.example.pojoCollections.ProductCollections.productPrice;
 public class MainClasss {
 	
 	private static final Logger log = Logger.getLogger(MainClasss.class);
-	
+		
 	public static void main(String[] args) {
-		
-		
-		
 		ProductCollections pc = new ProductCollections();	
 		
 		log.info(pc.prodWithMaxPrice()); 
 		log.info(pc.prodWithMinPrice());
 		
-		System.out.println("=========================");
+		log.info("=========================");
 		
 		log.info(pc.findBy(productBrand("Беседа")));
 		log.info(pc.findBy(productName("Ceylon")));
-		log.info(pc.findBy(productPrice(1000)));
-		
-		
-	
-		
-		
+		log.info(pc.findBy(productPrice(50)));
 	}
 
 }
