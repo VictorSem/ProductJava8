@@ -10,13 +10,13 @@ import java.util.stream.Stream;
 import org.apache.log4j.Logger;
 import org.example.pojo.Product;
 
-public class ProductCollections {
+public class ProductCollection {
 
-	private static final Logger log = Logger.getLogger(ProductCollections.class);
+	private static final Logger log = Logger.getLogger(ProductCollection.class);
 
 	private ArrayList<Product> prodCollection = new ArrayList<>();
 
-	private Stream<Product> products() {
+	public Stream<Product> products() {
 		return getProdCollection().stream();
 	}
 
@@ -76,7 +76,7 @@ public class ProductCollections {
 				.collect(Collectors.toList());
 
 		if (list.isEmpty()) {
-			log.info("Dont find element.");
+			log.info("Dont find element.  ");
 		}
 		return list;
 	}
@@ -92,6 +92,20 @@ public class ProductCollections {
 	
 	public static Predicate<Product> productPrice(Integer productPrice) {
 		return p -> p.getPrice().equals(productPrice);
+	}
+	
+	
+	
+	public boolean isAnyProductPriceGreaterOrEqual(Integer productPrice) {
+		return products().anyMatch(p -> p.getPrice() >= productPrice);
+	}
+	
+	public boolean isNoneProductPriceGreaterOrEqual(Integer productPrice) {
+		return products().noneMatch(p -> p.getPrice() >= productPrice);
+	}
+	
+	public boolean isAllProductPriceGreaterOrEqual(Integer productPrice) {
+		return products().allMatch(p -> p.getPrice() >= productPrice);
 	}
 
 }
