@@ -30,7 +30,8 @@ public class MainClasss {
 		log.info(pc.isNoneProductPriceGreaterOrEqual(200)); //true
 		log.info(pc.isAllProductPriceGreaterOrEqual(100)); //false
 		
-		
+		String testJoining = pc.products().map(x->x.getBrand()).distinct().collect(Collectors.joining(",", "[", "]"));
+		log.info(testJoining);
 
 		
 	}
